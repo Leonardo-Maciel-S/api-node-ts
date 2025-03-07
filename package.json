@@ -4,7 +4,8 @@
   "description": "api to learn node with TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon ./src/index.ts"
   },
   "keywords": [],
   "author": "Leonardo-Maciel-S",
@@ -14,7 +15,8 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
-    "ts-node-dev": "^2.0.0",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   }
 }
