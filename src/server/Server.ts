@@ -1,9 +1,11 @@
-import express, { Request, Response } from 'express'
+import express from "express";
 
 const server = express();
 
-server.get('/', (_: any, res: any) => {
-  return res.send('Olá, DEV!')
-})
+interface Teste {}
 
-export { server }
+server.get("/", (_: any, res: any) => {
+  return res.send("Olá, DEV!");
+});
+
+export { server };
