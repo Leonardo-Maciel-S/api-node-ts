@@ -4,8 +4,8 @@
   "description": "api to learn node with TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon ./src/index.ts"
+    "server": "nodemon ./src/index.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "Leonardo-Maciel-S",
