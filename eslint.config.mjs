@@ -5,6 +5,8 @@ export default tseslint.config([
   eslint.configs.recommended,
   tseslint.configs.recommended,
   {
-    rules: {},
+    rules: {
+      "@typescript-eslint/no-empty-object-type": "off",
+    },
   },
 ]);
