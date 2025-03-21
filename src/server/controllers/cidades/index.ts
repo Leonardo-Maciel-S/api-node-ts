@@ -1,3 +1,3 @@
-import * as create from "./Create";
+import * as create from "./create";
 
 export const cidadesController = { ...create };

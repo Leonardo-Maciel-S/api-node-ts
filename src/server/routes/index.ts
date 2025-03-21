@@ -9,6 +9,11 @@ const test = (_: Request, res: Response) => {
 };
 
 router.get("/", test);
-router.post("/cidades", cidadesController.create);
+router.post(
+  "/cidades",
+  cidadesController.createBodyValidator,
+  cidadesController.createQueryValidator,
+  cidadesController.create,
+);
 
 export { router };
