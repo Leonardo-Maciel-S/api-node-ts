@@ -9,6 +9,13 @@ const test = (_: Request, res: Response) => {
 };
 
 router.get("/", test);
+
+router.get(
+  "/cidades",
+  cidadesController.getAllValidation,
+  cidadesController.getAll,
+);
+
 router.post(
   "/cidades",
   cidadesController.createValidation,
