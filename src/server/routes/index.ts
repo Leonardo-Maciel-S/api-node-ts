@@ -1,8 +1,3 @@
-import {
-  updateById,
-  updateByIdValidation,
-} from "./../controllers/cidades/update-by-Id";
-import { getById, getByIdValidation } from "../controllers/cidades/get-by-id";
 import { Request, Response, Router } from "express";
 import { cidadesController } from "../controllers/cidades";
 
