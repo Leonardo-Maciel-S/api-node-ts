@@ -1,3 +1,8 @@
+import {
+  updateById,
+  updateByIdValidation,
+} from "./../controllers/cidades/update-by-Id";
+import { getById, getByIdValidation } from "../controllers/cidades/get-by-id";
 import { Request, Response, Router } from "express";
 import { cidadesController } from "../controllers/cidades";
 
@@ -20,6 +25,24 @@ router.post(
   "/cidades",
   cidadesController.createValidation,
   cidadesController.create,
+);
+
+router.get(
+  "/cidades/:id",
+  cidadesController.getByIdValidation,
+  cidadesController.getById,
+);
+
+router.put(
+  "/cidades/:id",
+  cidadesController.updateByIdValidation,
+  cidadesController.updateById,
+);
+
+router.delete(
+  "/cidades/:id",
+  cidadesController.deleteByIdValidation,
+  cidadesController.deleteById,
 );
 
 export { router };
