@@ -24,9 +24,18 @@ export const getAll = async (
   req: Request<{}, {}, {}, IQueryProps>,
   res: Response,
 ) => {
-  console.log(req.query);
-  res
-    .status(StatusCodes.INTERNAL_SERVER_ERROR)
-    .send("Não implementado! get all");
+  const listOfCidades = [
+    {
+      nome: "Planaltina",
+      estado: "Goiás",
+    },
+    {
+      nome: "Brasília",
+      estado: "Distrito Federal",
+    },
+  ];
+  res.status(StatusCodes.OK).json({
+    cidades: listOfCidades,
+  });
   return;
 };

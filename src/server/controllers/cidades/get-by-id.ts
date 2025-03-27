@@ -17,9 +17,9 @@ export const getByIdValidation = validation({
 });
 
 export const getById = async (req: Request<IParamsProps>, res: Response) => {
-  console.log(req.params.id);
   res
-    .status(StatusCodes.INTERNAL_SERVER_ERROR)
-    .send("Não implementado! getById");
+    .status(StatusCodes.OK)
+    .json({ id: req.params.id, nome: "teste", estado: "goias" });
+
   return;
 };
