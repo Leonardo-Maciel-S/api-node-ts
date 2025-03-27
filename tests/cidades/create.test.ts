@@ -2,7 +2,7 @@ import { StatusCodes } from "http-status-codes";
 import { testServer } from "../jest.setup";
 
 describe("Cidades - Create", () => {
-  it("should create an user ", async () => {
+  it("should create a 'Cidade' ", async () => {
     const res = await testServer.post("/cidades").send({
       nome: "Planaltina",
       estado: "Goiás",
@@ -11,7 +11,7 @@ describe("Cidades - Create", () => {
     expect(res.statusCode).toBe(StatusCodes.CREATED);
   });
 
-  it("should validate field 'nome' on create cidade", async () => {
+  it("Should return a 'field required' error for 'nome'", async () => {
     const res = await testServer.post("/cidades").send({
       estado: "Goiás",
     });
@@ -20,7 +20,7 @@ describe("Cidades - Create", () => {
     expect(res.body.errorsResult.body.nome).toBe("Este campo é obrigatório");
   });
 
-  it("should validate field 'estado' on create cidade", async () => {
+  it("should return a 'field required' error for 'estado'", async () => {
     const res = await testServer.post("/cidades").send({
       nome: "Planaltina",
     });
@@ -29,7 +29,7 @@ describe("Cidades - Create", () => {
     expect(res.body.errorsResult.body.estado).toBe("Este campo é obrigatório");
   });
 
-  it("should validate field length of 'estado' on create cidade", async () => {
+  it("should return a 'minimum 3 characters' error for the 'estado' field", async () => {
     const res = await testServer.post("/cidades").send({
       nome: "Planaltina",
       estado: "12",
